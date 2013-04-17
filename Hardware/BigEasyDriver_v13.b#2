@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -23,7 +23,7 @@
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -166,7 +166,9 @@
 <wire x1="17.78" y1="23.5712" x2="17.78" y2="23.8252" width="0.254" layer="21"/>
 <wire x1="19.685" y1="23.5712" x2="20.32" y2="23.5712" width="0.254" layer="21"/>
 <wire x1="20.32" y1="23.5712" x2="20.32" y2="23.8252" width="0.254" layer="21"/>
-<wire x1="30.7848" y1="14.986" x2="29.5402" y2="13.7414" width="0.254" layer="21" curve="180"/>
+<wire x1="30.6832" y1="13.8938" x2="29.4386" y2="15.1384" width="0.254" layer="21" curve="180"/>
+<wire x1="29.3878" y1="15.1384" x2="29.4894" y2="15.5702" width="0.254" layer="21"/>
+<wire x1="29.3878" y1="15.0876" x2="29.7942" y2="15.0368" width="0.254" layer="21"/>
 <text x="33.401" y="0.381" size="0.8636" layer="21" font="vector" ratio="16">DIR</text>
 <text x="27.6098" y="22.987" size="0.8636" layer="21" font="vector" ratio="16">M+</text>
 <text x="36.322" y="18.034" size="0.8636" layer="21" font="vector" ratio="16" rot="R90">BigEasyDriver</text>
@@ -233,7 +235,7 @@
 <text x="5.3848" y="6.096" size="0.8636" layer="21" font="vector" ratio="16">1</text>
 <text x="10.8204" y="23.7236" size="0.8636" layer="21" font="vector" ratio="16">1</text>
 <text x="23.3426" y="24.13" size="0.8636" layer="21" font="vector" ratio="16">1</text>
-<text x="29.7688" y="13.97" size="0.8636" layer="21" font="vector" ratio="16">+</text>
+<text x="29.718" y="13.97" size="0.8636" layer="21" font="vector" ratio="16">+</text>
 <text x="6.985" y="6.731" size="0.8636" layer="21" font="vector" ratio="16">EN</text>
 <text x="9.525" y="6.731" size="0.8636" layer="21" font="vector" ratio="16">M1</text>
 <text x="12.065" y="6.731" size="0.8636" layer="21" font="vector" ratio="16">M2</text>
@@ -245,8 +247,6 @@
 <text x="27.305" y="6.731" size="0.8636" layer="21" font="vector" ratio="16">ST</text>
 <text x="29.845" y="6.731" size="0.8636" layer="21" font="vector" ratio="16">DR</text>
 <rectangle x1="0" y1="8.128" x2="36.83" y2="19.05" layer="30"/>
-<wire x1="30.353" y1="14.859" x2="30.8102" y2="14.859" width="0.254" layer="21"/>
-<wire x1="30.8102" y1="14.859" x2="30.8102" y2="15.3416" width="0.254" layer="21"/>
 </plain>
 <libraries>
 <library name="SparkFun03_30_09">
@@ -3565,7 +3565,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="default">
+<designrules>
 <description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 The default Design Rules have been set to cover
