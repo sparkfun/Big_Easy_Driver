@@ -85,6 +85,7 @@
 <layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="144" name="DrillLegend" color="7" fill="1" visible="no" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="no" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="no"/>
 <layer number="201" name="201bmp" color="2" fill="1" visible="no" active="no"/>
 <layer number="202" name="202bmp" color="3" fill="1" visible="no" active="no"/>
@@ -2867,12 +2868,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 </package>
 </packages>
 <symbols>
-<symbol name="LETTER_L">
-<wire x1="0" y1="185.42" x2="248.92" y2="185.42" width="0.4064" layer="94"/>
-<wire x1="248.92" y1="185.42" x2="248.92" y2="0" width="0.4064" layer="94"/>
-<wire x1="0" y1="185.42" x2="0" y2="0" width="0.4064" layer="94"/>
-<wire x1="0" y1="0" x2="248.92" y2="0" width="0.4064" layer="94"/>
-</symbol>
 <symbol name="TRIMPOT">
 <wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.1524" layer="94"/>
 <wire x1="-2.159" y1="1.016" x2="-1.524" y2="-1.016" width="0.1524" layer="94"/>
@@ -2903,35 +2898,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <wire x1="7.62" y1="-2.54" x2="7.62" y2="5.08" width="0.254" layer="94"/>
 <wire x1="7.62" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
 <text x="0" y="0" size="1.9304" layer="94">SFE</text>
-</symbol>
-<symbol name="DOCFIELD">
-<wire x1="0" y1="0" x2="71.12" y2="0" width="0.254" layer="94"/>
-<wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="71.12" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="0" y2="15.24" width="0.254" layer="94"/>
-<wire x1="101.6" y1="15.24" x2="101.6" y2="5.08" width="0.254" layer="94"/>
-<wire x1="71.12" y1="5.08" x2="71.12" y2="0" width="0.254" layer="94"/>
-<wire x1="71.12" y1="5.08" x2="87.63" y2="5.08" width="0.254" layer="94"/>
-<wire x1="71.12" y1="0" x2="101.6" y2="0" width="0.254" layer="94"/>
-<wire x1="87.63" y1="15.24" x2="87.63" y2="5.08" width="0.254" layer="94"/>
-<wire x1="87.63" y1="15.24" x2="0" y2="15.24" width="0.254" layer="94"/>
-<wire x1="87.63" y1="5.08" x2="101.6" y2="5.08" width="0.254" layer="94"/>
-<wire x1="101.6" y1="5.08" x2="101.6" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="15.24" x2="0" y2="22.86" width="0.254" layer="94"/>
-<wire x1="101.6" y1="35.56" x2="0" y2="35.56" width="0.254" layer="94"/>
-<wire x1="101.6" y1="35.56" x2="101.6" y2="22.86" width="0.254" layer="94"/>
-<wire x1="0" y1="22.86" x2="101.6" y2="22.86" width="0.254" layer="94"/>
-<wire x1="0" y1="22.86" x2="0" y2="35.56" width="0.254" layer="94"/>
-<wire x1="101.6" y1="22.86" x2="101.6" y2="15.24" width="0.254" layer="94"/>
-<text x="1.27" y="1.27" size="2.54" layer="94" font="vector">Date:</text>
-<text x="12.7" y="1.27" size="2.54" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
-<text x="72.39" y="1.27" size="2.54" layer="94" font="vector">Sheet:</text>
-<text x="86.36" y="1.27" size="2.54" layer="94" font="vector">&gt;SHEET</text>
-<text x="88.9" y="11.43" size="2.54" layer="94" font="vector">REV:</text>
-<text x="1.524" y="17.78" size="2.54" layer="94" font="vector">TITLE:</text>
-<text x="1.27" y="11.43" size="2.54" layer="94" font="vector">Document Number:</text>
-<text x="15.494" y="17.78" size="2.7432" layer="94" font="vector">&gt;DRAWING_NAME</text>
 </symbol>
 <symbol name="M02">
 <wire x1="3.81" y1="-2.54" x2="-2.54" y2="-2.54" width="0.4064" layer="94"/>
@@ -3004,21 +2970,6 @@ For COM-09806 in the SparkFun catalog&lt;br&gt;</description>
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="FRAME-LETTER" prefix="FRAME">
-<description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
-Standard 8.5x11 US Letter frame</description>
-<gates>
-<gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
-<gate name="G$2" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
 </gates>
 <devices>
 <device name="">
@@ -19492,6 +19443,77 @@ Various fiducial points for machine vision alignment.</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Aesthetics">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find non-functional items- supply symbols, logos, notations, frame blocks, etc.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="CREATIVE_COMMONS">
+<text x="-20.32" y="5.08" size="1.778" layer="27">Released under the Creative Commons Attribution Share-Alike 3.0 License</text>
+<text x="0" y="2.54" size="1.778" layer="27">http://creativecommons.org/licenses/by-sa/3.0</text>
+<text x="11.43" y="0" size="1.778" layer="27">Designed by:</text>
+</package>
+</packages>
+<symbols>
+<symbol name="LETTER_L">
+<wire x1="0" y1="185.42" x2="248.92" y2="185.42" width="0.4064" layer="94"/>
+<wire x1="248.92" y1="185.42" x2="248.92" y2="0" width="0.4064" layer="94"/>
+<wire x1="0" y1="185.42" x2="0" y2="0" width="0.4064" layer="94"/>
+<wire x1="0" y1="0" x2="248.92" y2="0" width="0.4064" layer="94"/>
+</symbol>
+<symbol name="DOCFIELD">
+<wire x1="0" y1="0" x2="71.12" y2="0" width="0.254" layer="94"/>
+<wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="71.12" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="15.24" width="0.254" layer="94"/>
+<wire x1="101.6" y1="15.24" x2="101.6" y2="5.08" width="0.254" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="71.12" y2="0" width="0.254" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="87.63" y2="5.08" width="0.254" layer="94"/>
+<wire x1="71.12" y1="0" x2="101.6" y2="0" width="0.254" layer="94"/>
+<wire x1="87.63" y1="15.24" x2="87.63" y2="5.08" width="0.254" layer="94"/>
+<wire x1="87.63" y1="15.24" x2="0" y2="15.24" width="0.254" layer="94"/>
+<wire x1="87.63" y1="5.08" x2="101.6" y2="5.08" width="0.254" layer="94"/>
+<wire x1="101.6" y1="5.08" x2="101.6" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="15.24" x2="0" y2="22.86" width="0.254" layer="94"/>
+<wire x1="101.6" y1="35.56" x2="0" y2="35.56" width="0.254" layer="94"/>
+<wire x1="101.6" y1="35.56" x2="101.6" y2="22.86" width="0.254" layer="94"/>
+<wire x1="0" y1="22.86" x2="101.6" y2="22.86" width="0.254" layer="94"/>
+<wire x1="0" y1="22.86" x2="0" y2="35.56" width="0.254" layer="94"/>
+<wire x1="101.6" y1="22.86" x2="101.6" y2="15.24" width="0.254" layer="94"/>
+<text x="1.27" y="1.27" size="2.54" layer="94" font="vector">Date:</text>
+<text x="12.7" y="1.27" size="2.54" layer="94" font="vector">&gt;LAST_DATE_TIME</text>
+<text x="72.39" y="1.27" size="2.54" layer="94" font="vector">Sheet:</text>
+<text x="86.36" y="1.27" size="2.54" layer="94" font="vector">&gt;SHEET</text>
+<text x="88.9" y="11.43" size="2.54" layer="94" font="vector">REV:</text>
+<text x="1.524" y="17.78" size="2.54" layer="94" font="vector">TITLE:</text>
+<text x="15.494" y="17.78" size="2.7432" layer="94" font="vector">&gt;DRAWING_NAME</text>
+<text x="2.54" y="31.75" size="1.9304" layer="94">Released under the Creative Commons</text>
+<text x="2.54" y="27.94" size="1.9304" layer="94">Attribution Share-Alike 3.0 License</text>
+<text x="2.54" y="24.13" size="1.9304" layer="94">http://creativecommons.org/licenses/by-sa/3.0</text>
+<text x="1.27" y="11.43" size="2.54" layer="94">Design by:</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="FRAME-LETTER" prefix="FRAME">
+<description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
+Standard 8.5x11 US Letter frame</description>
+<gates>
+<gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
+<gate name="G$2" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
+</gates>
+<devices>
+<device name="" package="CREATIVE_COMMONS">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -19505,7 +19527,7 @@ Various fiducial points for machine vision alignment.</description>
 <part name="P+4" library="supply1" deviceset="+5V" device="" value="VCC"/>
 <part name="MOT_PWR" library="supply1" deviceset="V+" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="FRAME1" library="SparkFun" deviceset="FRAME-LETTER" device=""/>
+<part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="R6" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="390"/>
 <part name="R8" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="240"/>
 <part name="PWR_LED" library="SparkFun03_30_09" deviceset="LED" device="0603" value="YELLOW"/>
@@ -19591,8 +19613,8 @@ Various fiducial points for machine vision alignment.</description>
 <wire x1="30.48" y1="30.48" x2="12.7" y2="30.48" width="0.1524" layer="98" style="shortdash"/>
 <wire x1="12.7" y1="30.48" x2="12.7" y2="55.88" width="0.1524" layer="98" style="shortdash"/>
 <wire x1="111.252" y1="50.8" x2="112.268" y2="50.8" width="0.1524" layer="94"/>
-<text x="154.94" y="30.48" size="1.778" layer="94">Designed by Brian Schmalz</text>
-<text x="154.94" y="25.4" size="1.778" layer="94">Produced by Spark Fun Electronics</text>
+<text x="165.862" y="11.684" size="1.778" layer="94"> Brian Schmalz</text>
+<text x="165.862" y="7.62" size="1.778" layer="94">Produced by Spark Fun Electronics</text>
 <text x="142.24" y="53.34" size="1.778" layer="98">Voltage regulator can supply 100mA</text>
 <text x="71.12" y="58.42" size="1.778" layer="98">Must use LM317</text>
 <text x="71.12" y="55.88" size="1.778" layer="98">For 35V V+ input</text>
@@ -19662,7 +19684,7 @@ Various fiducial points for machine vision alignment.</description>
 <text x="2.54" y="5.08" size="1.778" layer="98">-ran all traces directly away from IC</text>
 <text x="2.54" y="2.54" size="1.778" layer="98">-moved vias and retraced as necessary on VCC and TOP layers</text>
 <text x="238.76" y="7.62" size="2.54" layer="94" font="vector">v15</text>
-<text x="195.58" y="25.4" size="2.1844" layer="94" font="vector">Revised by Patrick Alberts</text>
+<text x="185.42" y="11.938" size="1.778" layer="94">Revised by Patrick Alberts</text>
 </plain>
 <instances>
 <instance part="P+4" gate="1" x="137.16" y="55.88" smashed="yes">
@@ -19752,8 +19774,8 @@ Various fiducial points for machine vision alignment.</description>
 <instance part="JP14" gate="G$1" x="60.96" y="93.98"/>
 <instance part="C2" gate="G$1" x="127" y="35.56"/>
 <instance part="LOGO1" gate="G$1" x="127" y="5.08"/>
-<instance part="JP2" gate="G$1" x="193.04" y="33.02"/>
-<instance part="JP4" gate="G$1" x="198.12" y="33.02"/>
+<instance part="JP2" gate="G$1" x="139.7" y="7.62"/>
+<instance part="JP4" gate="G$1" x="134.62" y="7.62"/>
 <instance part="U$3" gate="G$1" x="185.42" y="104.14"/>
 <instance part="U$4" gate="G$1" x="185.42" y="101.6"/>
 <instance part="U$5" gate="G$1" x="185.42" y="99.06"/>
@@ -19894,7 +19916,6 @@ Various fiducial points for machine vision alignment.</description>
 <wire x1="124.46" y1="139.7" x2="147.32" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="142.24" x2="124.46" y2="139.7" width="0.1524" layer="91"/>
 <junction x="124.46" y="139.7"/>
-<label x="132.08" y="140.208" size="1.778" layer="95"/>
 <pinref part="IC1" gate="G$1" pin="VDD"/>
 <pinref part="C7" gate="G$1" pin="1"/>
 <pinref part="P+2" gate="1" pin="VCC"/>
