@@ -1,8 +1,8 @@
 Big Easy Driver
 ================
 
-[![Part Name](URL for picture of part  
-*Part Name (SKU)*](URL for product on Sparkfun.com)
+[![Big Easy Driver](https://dlnmh9ip6v2uc.cloudfront.net/images/products/1/1/8/7/6/10735-01b_i_ma.jpg)
+*Big Easy Driver (ROB-11876)*](https://www.sparkfun.com/products/11876)
 
 This is a stepper motor driver board capapble of driving bi-polar stepper motors at up to 2A/phase.
 
