@@ -8,16 +8,16 @@
 </settings>
 <grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="11" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="6" fill="1" visible="no" active="yes"/>
-<layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="14" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="16" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
@@ -250,6 +250,21 @@
 <wire x1="30.353" y1="14.859" x2="30.8102" y2="14.859" width="0.254" layer="21"/>
 <wire x1="30.8102" y1="14.859" x2="30.8102" y2="15.3416" width="0.254" layer="21"/>
 <text x="-107.95" y="-2.54" size="1.778" layer="27" font="vector">Brian Schmalz: http://schmalzhaus.com/BigEasyDriver/index.html</text>
+<wire x1="0.762" y1="1.397" x2="0.762" y2="3.683" width="0.254" layer="22"/>
+<wire x1="0.762" y1="3.683" x2="3.81" y2="3.683" width="0.254" layer="22"/>
+<wire x1="3.81" y1="3.683" x2="3.81" y2="1.397" width="0.254" layer="22"/>
+<wire x1="4.699" y1="1.397" x2="4.699" y2="3.683" width="0.254" layer="22"/>
+<wire x1="4.699" y1="3.683" x2="14.478" y2="3.683" width="0.254" layer="22"/>
+<wire x1="14.478" y1="3.683" x2="14.478" y2="1.397" width="0.254" layer="22"/>
+<wire x1="14.986" y1="1.397" x2="14.986" y2="3.683" width="0.254" layer="22"/>
+<wire x1="14.986" y1="3.683" x2="21.463" y2="3.683" width="0.254" layer="22"/>
+<wire x1="21.463" y1="3.683" x2="21.463" y2="1.397" width="0.254" layer="22"/>
+<wire x1="21.971" y1="1.397" x2="21.971" y2="3.683" width="0.254" layer="22"/>
+<wire x1="21.971" y1="3.683" x2="28.448" y2="3.683" width="0.254" layer="22"/>
+<wire x1="28.448" y1="3.683" x2="28.448" y2="1.397" width="0.254" layer="22"/>
+<wire x1="28.956" y1="1.397" x2="28.956" y2="3.683" width="0.254" layer="22"/>
+<wire x1="28.956" y1="3.683" x2="35.56" y2="3.683" width="0.254" layer="22"/>
+<wire x1="35.56" y1="3.683" x2="35.56" y2="1.397" width="0.254" layer="22"/>
 </plain>
 <libraries>
 <library name="SparkFun03_30_09">
