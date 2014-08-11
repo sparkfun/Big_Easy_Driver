@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -18989,7 +18989,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="12.7" y1="30.48" x2="12.7" y2="56.642" width="0.1524" layer="98" style="shortdash"/>
 <wire x1="111.252" y1="50.8" x2="112.268" y2="50.8" width="0.1524" layer="94"/>
 <text x="169.672" y="11.43" size="1.778" layer="94"> Brian Schmalz</text>
-<text x="148.59" y="6.35" size="1.778" layer="94">Produced by Spark Fun Electronics</text>
+<text x="148.59" y="6.35" size="1.778" layer="94">Produced by SparkFun Electronics</text>
 <text x="142.24" y="53.34" size="1.4224" layer="98">Voltage regulator can supply 100mA</text>
 <text x="71.12" y="58.42" size="1.4224" layer="98">Must use LM317</text>
 <text x="71.12" y="55.88" size="1.4224" layer="98">For 35V V+ input</text>
