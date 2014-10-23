@@ -20,7 +20,8 @@ void setup()
   
   //stepper1.setEnablePin(10);
   //stepper2.setEnablePin(11);
-  
+  //stepper1.setPinsInverted(0,0,1);//invert the enable pin
+  //stepper2.setPinsInverted(0,0,1);
   
   pinMode(switch_x_left, INPUT_PULLUP);
   pinMode(switct_y_top, INPUT_PULLUP);
@@ -28,18 +29,71 @@ void setup()
   home();//set the cursor back to its home position at 0,0
   
   delay(500);
-  
+  /*
   stepper1.moveTo(5000);
   stepper1.setSpeed(3000);
   while(stepper1.distanceToGo() != 0)
   {
     stepper1.runSpeed();
     Serial.println(stepper1.currentPosition());
-  }
+  }*/
 }
 void loop()
 {
-
+  if(Serial.available() > 0)
+  {
+    int temp = Serial.read();
+    
+    if(temp == 119 || temp == 87)//dec for 'w'
+    {
+      stepper2.moveTo(stepper2.currentPosition() - 100);
+      stepper2.setSpeed(2000);
+      while(stepper2.distanceToGo() != 0)
+      {
+        stepper2.runSpeed();
+        Serial.print(stepper1.currentPosition());
+        Serial.print("   ");
+        Serial.println(stepper2.currentPosition());
+      }
+    }
+    if(temp == 115 || temp == 83)//dec for 's'
+    {
+      stepper2.moveTo(stepper2.currentPosition() + 100.00);
+      stepper2.setSpeed(2000);
+      while(stepper2.distanceToGo() != 0)
+      {
+        stepper2.runSpeed();
+        Serial.print(stepper1.currentPosition());
+        Serial.print("   ");
+        Serial.println(stepper2.currentPosition());
+      } 
+    }
+    if(temp == 97 || temp == 65)//dec for 'a'
+    {
+      stepper1.moveTo(stepper1.currentPosition() - 100);
+      stepper1.setSpeed(3000);
+      while(stepper1.distanceToGo() != 0)
+      {
+        stepper1.runSpeed();
+        Serial.print(stepper1.currentPosition());
+        Serial.print("   ");
+        Serial.println(stepper2.currentPosition());
+      }  
+    }
+    if(temp == 100 || temp == 68)//dec for 'd'
+    {
+      stepper1.moveTo(stepper1.currentPosition() + 100.00);
+      stepper1.setSpeed(3000);
+      while(stepper1.distanceToGo() != 0)
+      {
+        stepper1.runSpeed();
+        Serial.print(stepper1.currentPosition());
+        Serial.print("   ");
+        Serial.println(stepper2.currentPosition());
+      }
+    }
+  
+  }
 }
 //------------------------------------------------------------------------------
 void home()
