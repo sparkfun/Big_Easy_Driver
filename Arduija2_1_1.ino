@@ -10,35 +10,32 @@ int pos2 = 0;
 int switch_x_left = 8;
 int switct_y_top = 9;
 
-int enable = 10;
-int enable2 = 11;
-
 void setup()
 {  
   Serial.begin(115200);
-  stepper1.setMaxSpeed(5000);
+  stepper1.setMaxSpeed(3000);
   stepper1.setAcceleration(1);
-  stepper2.setMaxSpeed(4000);
+  stepper2.setMaxSpeed(2000);
   stepper2.setAcceleration(1);
+  
+  //stepper1.setEnablePin(10);
+  //stepper2.setEnablePin(11);
+  
   
   pinMode(switch_x_left, INPUT_PULLUP);
   pinMode(switct_y_top, INPUT_PULLUP);
+    
+  home();//set the cursor back to its home position at 0,0
   
-  pinMode(enable, OUTPUT);
-  pinMode(enable2, OUTPUT);
-  digitalWrite(enable, LOW);//Diable both motors to start
-  digitalWrite(enable2, HIGH);
+  delay(500);
   
-  //home();//set the cursor back to its home position at 0,0
-  
-
-  
-  //digitalWrite(enable, LOW);//enable motor1
-  stepper1.moveTo(50000);
+  stepper1.moveTo(5000);
+  stepper1.setSpeed(3000);
   while(stepper1.distanceToGo() != 0)
-    stepper1.run();
+  {
+    stepper1.runSpeed();
     Serial.println(stepper1.currentPosition());
-  //digitalWrite(enable, HIGH);//disable motor1
+  }
 }
 void loop()
 {
@@ -48,7 +45,6 @@ void loop()
 void home()
 {
   //Decided to move Y axis first since one of the magnets was hitting if it was all the way away from home. 
-  digitalWrite(enable2, LOW);//enable motor 1
   if(digitalRead(switct_y_top) == HIGH)
   {
     while(digitalRead(switct_y_top) == HIGH)
@@ -69,11 +65,8 @@ void home()
   stepper2.setCurrentPosition(0);
   }
   
-  digitalWrite(enable2, HIGH);//disable the motor 
-  
     /////////////////////////////////////////////
   
-  digitalWrite(enable, LOW);//enable motor 1
   if(digitalRead(switch_x_left) == HIGH)//check to make sure this axis isn;t already in the home posotion 
   {
     while(digitalRead(switch_x_left) == HIGH)//if it is not at home (HIGH) ...
@@ -92,6 +85,6 @@ void home()
   pos1 = 0;
   stepper1.setCurrentPosition(0);
   }
-  digitalWrite(enable, HIGH);//disable the motor 
+
 }
 //------------------------------------------------------------------------------
