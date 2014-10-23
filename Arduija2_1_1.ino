@@ -1,8 +1,9 @@
 #include <AccelStepper.h>
+#include "ouijaFunctions.h"
 
 // Define two steppers and the pins they will use
-AccelStepper stepper1(1, 4, 5); //(driver=true, step, dir)  X axis
-AccelStepper stepper2(1, 6, 7);//Y axis
+//AccelStepper stepperX(1, 4, 5); //(driver=true, step, dir)  X axis
+//AccelStepper stepperY(1, 6, 7);//Y axis
 
 int pos1 = 0;//Varibales to keep track of the planchet's current position 
 int pos2 = 0;
@@ -13,87 +14,37 @@ int switct_y_top = 9;
 void setup()
 {  
   Serial.begin(115200);
-  stepper1.setMaxSpeed(3000);
-  stepper1.setAcceleration(1);
-  stepper2.setMaxSpeed(2000);
-  stepper2.setAcceleration(1);
+  stepperX.setMaxSpeed(5000);
+  stepperX.setAcceleration(4000);
+  stepperY.setMaxSpeed(5000);
+  stepperY.setAcceleration(4000);
   
-  //stepper1.setEnablePin(10);
-  //stepper2.setEnablePin(11);
-  //stepper1.setPinsInverted(0,0,1);//invert the enable pin
-  //stepper2.setPinsInverted(0,0,1);
+  //stepperX.setEnablePin(10);
+  //stepperY.setEnablePin(11);
+  //stepperX.setPinsInverted(0,0,1);//invert the enable pin
+  //stepperY.setPinsInverted(0,0,1);
   
   pinMode(switch_x_left, INPUT_PULLUP);
   pinMode(switct_y_top, INPUT_PULLUP);
     
   home();//set the cursor back to its home position at 0,0
   
-  delay(500);
-  /*
-  stepper1.moveTo(5000);
-  stepper1.setSpeed(3000);
-  while(stepper1.distanceToGo() != 0)
-  {
-    stepper1.runSpeed();
-    Serial.println(stepper1.currentPosition());
-  }*/
+  //drawCircleCW();
 }
+//------------------------------------------------------------------------------
 void loop()
 {
-  if(Serial.available() > 0)
-  {
-    int temp = Serial.read();
-    
-    if(temp == 119 || temp == 87)//dec for 'w'
-    {
-      stepper2.moveTo(stepper2.currentPosition() - 100);
-      stepper2.setSpeed(2000);
-      while(stepper2.distanceToGo() != 0)
-      {
-        stepper2.runSpeed();
-        Serial.print(stepper1.currentPosition());
-        Serial.print("   ");
-        Serial.println(stepper2.currentPosition());
-      }
-    }
-    if(temp == 115 || temp == 83)//dec for 's'
-    {
-      stepper2.moveTo(stepper2.currentPosition() + 100.00);
-      stepper2.setSpeed(2000);
-      while(stepper2.distanceToGo() != 0)
-      {
-        stepper2.runSpeed();
-        Serial.print(stepper1.currentPosition());
-        Serial.print("   ");
-        Serial.println(stepper2.currentPosition());
-      } 
-    }
-    if(temp == 97 || temp == 65)//dec for 'a'
-    {
-      stepper1.moveTo(stepper1.currentPosition() - 100);
-      stepper1.setSpeed(3000);
-      while(stepper1.distanceToGo() != 0)
-      {
-        stepper1.runSpeed();
-        Serial.print(stepper1.currentPosition());
-        Serial.print("   ");
-        Serial.println(stepper2.currentPosition());
-      }  
-    }
-    if(temp == 100 || temp == 68)//dec for 'd'
-    {
-      stepper1.moveTo(stepper1.currentPosition() + 100.00);
-      stepper1.setSpeed(3000);
-      while(stepper1.distanceToGo() != 0)
-      {
-        stepper1.runSpeed();
-        Serial.print(stepper1.currentPosition());
-        Serial.print("   ");
-        Serial.println(stepper2.currentPosition());
-      }
-    }
+  //char arrayThing[30] = {'h','e','l','l','o',0};
+  //ouijaPrint(arrayThing);
   
-  }
+ // char arrayThing2[30] = {'z','a','m','n',0};
+ // ouijaPrint(arrayThing2);
+  
+  char arrayThing3[30] = {'s','p','a','r','k','f','u','n',0};
+  ouijaPrint(arrayThing3);
+  //while(1);
+  //{}
+  moveWithKeyboard();
 }
 //------------------------------------------------------------------------------
 void home()
@@ -103,42 +54,181 @@ void home()
   {
     while(digitalRead(switct_y_top) == HIGH)
     {
-      stepper2.moveTo(pos2);
-      stepper2.run();
+      stepperY.moveTo(pos2);
+      stepperY.run();
       pos2 = pos2 - 1;
       //Serial.println(pos2);
     }
     if(digitalRead(switct_y_top) == LOW)
-      stepper2.stop();
+      stepperY.stop();
       pos2 = 0;
-      stepper2.setCurrentPosition(0);
+      stepperY.setCurrentPosition(0);
     }
   else
   {
   pos2 = 0;
-  stepper2.setCurrentPosition(0);
+  stepperY.setCurrentPosition(0);
   }
-  
-    /////////////////////////////////////////////
   
   if(digitalRead(switch_x_left) == HIGH)//check to make sure this axis isn;t already in the home posotion 
   {
     while(digitalRead(switch_x_left) == HIGH)//if it is not at home (HIGH) ...
     {
-      stepper1.moveTo(pos1);//start moving the X axis back to the home position
-      stepper1.run();
+      stepperX.moveTo(pos1);//start moving the X axis back to the home position
+      stepperX.run();
       pos1 = pos1 - 1;//decrement the position until we reach 0 (where the switch is triggered) 
     }
     if(digitalRead(switch_x_left) == LOW)//Once the switch is hit and the signal goes LOW...
-      stepper1.stop();//stop the motor
+      stepperX.stop();//stop the motor
       pos1 = 0;//set this axis position to 0
-      stepper1.setCurrentPosition(0);
+      stepperX.setCurrentPosition(0);
   }
   else
   {
   pos1 = 0;
-  stepper1.setCurrentPosition(0);
+  stepperX.setCurrentPosition(0);
   }
 
 }
 //------------------------------------------------------------------------------
+void moveWithKeyboard()
+//This function was used to jog each axis 100 "steps" in each direction 
+{
+  if(Serial.available() > 0)
+  {
+    int temp = Serial.read();
+    
+    if(temp == 119 || temp == 87)//dec for 'w'
+    {
+      stepperY.moveTo(stepperY.currentPosition() - 100);
+      //stepperY.setSpeed(2000);
+      while(stepperY.distanceToGo() != 0)
+      {
+        stepperY.run();
+      }
+      Serial.print(stepperX.currentPosition());
+      Serial.print("   ");
+      Serial.println(stepperY.currentPosition());
+    }
+    if(temp == 115 || temp == 83)//dec for 's'
+    {
+      stepperY.moveTo(stepperY.currentPosition() + 100);
+      //stepperY.setSpeed(2000);
+      while(stepperY.distanceToGo() != 0)
+      {
+        stepperY.run();
+      } 
+      Serial.print(stepperX.currentPosition());
+      Serial.print("   ");
+      Serial.println(stepperY.currentPosition());
+    }
+    if(temp == 97 || temp == 65)//dec for 'a'
+    {
+      stepperX.moveTo(stepperX.currentPosition() - 100);
+      //stepperX.setSpeed(3000);
+      while(stepperX.distanceToGo() != 0)
+      {
+        stepperX.run();
+      }  
+      Serial.print(stepperX.currentPosition());
+      Serial.print("   ");
+      Serial.println(stepperY.currentPosition());
+    }
+    if(temp == 100 || temp == 68)//dec for 'd'
+    {
+      stepperX.moveTo(stepperX.currentPosition() + 100.00);
+      //stepperX.setSpeed(3000);
+      while(stepperX.distanceToGo() != 0)
+      {
+        stepperX.run();
+      }
+      Serial.print(stepperX.currentPosition());
+      Serial.print("   ");
+      Serial.println(stepperY.currentPosition());
+    }
+    
+    //move in larger increments with the right side of the keyboard
+    if(temp == 105 || temp == 73)//dec for 'i'
+    {
+      stepperY.moveTo(stepperY.currentPosition() - 1000);
+      while(stepperY.distanceToGo() != 0)
+      {
+        stepperY.run();
+      }
+      Serial.print(stepperX.currentPosition()); Serial.print("   "); Serial.println(stepperY.currentPosition());
+    }
+    if(temp == 107 || temp == 75)//dec for 'k'
+    {
+      stepperY.moveTo(stepperY.currentPosition() + 1000);
+      //stepperY.setSpeed(2000);
+      while(stepperY.distanceToGo() != 0)
+      {
+        stepperY.run();
+      } 
+      Serial.print(stepperX.currentPosition()); Serial.print("   "); Serial.println(stepperY.currentPosition());
+    }
+    if(temp == 106 || temp == 74)//dec for 'j'
+    {
+      stepperX.moveTo(stepperX.currentPosition() - 2000);
+      //stepperX.setSpeed(3000);
+      while(stepperX.distanceToGo() != 0)
+      {
+        stepperX.run();
+      }  
+      Serial.print(stepperX.currentPosition()); Serial.print("   "); Serial.println(stepperY.currentPosition());
+    }
+    if(temp == 108 || temp == 76)//dec for 'l'
+    {
+      stepperX.moveTo(stepperX.currentPosition() + 2000);
+      while(stepperX.distanceToGo() != 0)
+      {
+        stepperX.run();
+      }
+      Serial.print(stepperX.currentPosition()); Serial.print("   "); Serial.println(stepperY.currentPosition());
+    }
+  
+  }
+}
+//------------------------------------------------------------------------------
+void drawCircleCW()
+{
+  stepperX.moveTo(12000);
+  stepperY.moveTo(1000);
+  while((stepperX.distanceToGo() != 0)||(stepperX.distanceToGo() != 0))
+  {
+    stepperX.run();
+    stepperY.run();
+  }
+  
+  stepperX.moveTo(14000);
+  stepperY.moveTo(2000);
+  while((stepperX.distanceToGo() != 0)||(stepperX.distanceToGo() != 0))
+  {
+    stepperX.run();
+    stepperY.run();
+  }
+  
+  stepperX.moveTo(12000);
+  stepperY.moveTo(3000);
+  while((stepperX.distanceToGo() != 0)||(stepperX.distanceToGo() != 0))
+  {
+    stepperX.run();
+    stepperY.run();
+  }
+  
+  stepperX.moveTo(8000);
+  stepperY.moveTo(2000);
+  while((stepperX.distanceToGo() != 0)||(stepperX.distanceToGo() != 0))
+  {
+    stepperX.run();
+    stepperY.run();
+  }
+  
+  stepperX.moveTo(12000);
+  stepperY.moveTo(2000);
+  while((stepperX.distanceToGo() != 0)||(stepperX.distanceToGo() != 0))
+  {
+    stepperX.run();
+    stepperY.run();
+  }
+}

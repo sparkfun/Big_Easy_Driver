@@ -1,8 +1,15 @@
 #include <avr/pgmspace.h>
-
+#include <AccelStepper.h>
 #define MAX_ARRAY_LENGTH 32
 
-prog_int coordinatesTable[3][39] PROGMEM = {
+
+// Define two steppers and the pins they will use
+AccelStepper stepperX(1, 4, 5);//X axis
+AccelStepper stepperY(1, 6, 7);//Y axis
+//(driver=true, step, dir)
+
+
+unsigned int coordinatesTable[39][3] = {
   1000,3300,'a',
   3300,2600,'b',
   4800,2400,'c',
@@ -41,13 +48,17 @@ prog_int coordinatesTable[3][39] PROGMEM = {
   0,0,'+',//YES
   0,0,'-',//NO
   0,0,'!'//GOODBYE
+  
 };
   
 int findSymbolInTable(char symbol){
   int tableIndex;
   
   for(tableIndex = 0; tableIndex <= 39; tableIndex++){
-    if(symbol == coordinatesTable[2][tableIndex]){
+    Serial.println(char((coordinatesTable[tableIndex][2])));
+    if(symbol == char(coordinatesTable[tableIndex][2])){
+      Serial.print("Char FOUND = ");
+      Serial.println(tableIndex);
       return tableIndex; //Return the table location
     }
   }
@@ -56,12 +67,26 @@ int findSymbolInTable(char symbol){
 }
 
 void moveToSymbol(char character){
-  int tableLocation = findSymbolInTable(character);
+  int tableIndex = findSymbolInTable(character);
   
   //xAxisLocation = coordinatesTable[0][tableIndex];
   //yAxisLocation = coordinatesTable[1][tableIndex];
   
   //MoveMotors?
+  Serial.print("x = ");
+  Serial.println(coordinatesTable[tableIndex][0]);
+
+  Serial.print("y = ");
+  Serial.println(coordinatesTable[tableIndex][1]);
+
+  stepperX.moveTo(coordinatesTable[tableIndex][0]);
+  stepperY.moveTo(coordinatesTable[tableIndex][1]);
+  
+  while((stepperX.distanceToGo() != 0)||(stepperX.distanceToGo() != 0)){
+    //Serial.println(stepperX.distanceToGo());
+    stepperY.run();
+    stepperX.run();
+  }
   
   return;
 }
@@ -81,6 +106,7 @@ void ouijaPrint(char* charArray){
       moveToSymbol(charArray[i]);
       ouijaDelay();            
     } //Only move if there if valid data, if not let the loop run out.
+    else break;
   }
   return;
 }
