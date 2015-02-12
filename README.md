@@ -24,8 +24,8 @@ Product Versions
 
 Version History
 ---------------
-* [vExxFxxZxxHxxLxxSxx](URL for tag specific to this version) description 
-* [vEyyFyyZyyHyyLyySyy](URL for tag specific to this version) description
+* [Hw-v1.6_Fw-v1.0](https://github.com/sparkfun/Big_Easy_Driver/tree/HW-v1.6_Fw-v1.0) -GitHub tag for hardware version 1.6, firmware version 1.0.  
+* [HW-v1.5](https://github.com/sparkfun/Big_Easy_Driver/tree/HW-v1.5) - GitHub tag for Hardware version 1.5. 
 
 License Information
 -------------------
