@@ -1,8 +1,8 @@
-Big Easy Driver
-================
+SparkFun Big Easy Driver
+========================
 
-[![Big Easy Driver](https://dlnmh9ip6v2uc.cloudfront.net/images/products/1/1/8/7/6/10735-01b_i_ma.jpg)
-*Big Easy Driver (ROB-11876)*](https://www.sparkfun.com/products/11876)
+![SparkFun Big Easy Driver](https://cdn.sparkfun.com//assets/parts/9/7/2/6/12859-01.jpg)
+[*SparkFun Big Easy Driver (ROB-12859)*](https://www.sparkfun.com/products/12859)
 
 This is a stepper motor driver board capable of driving bi-polar stepper motors at up to 2A/phase.
 
@@ -11,13 +11,29 @@ For more information, see the [original project site](http://schmalzhaus.com/Big
 Repository Contents
 -------------------
 
+* **/Firmware** - Example Arduino sketches 
 * **/Hardware** - All Eagle design files (.brd, .sch)
 * **/Production** - Test bed files and production panel files
+
+Product Versions
+----------------
+* [ROB-12859](https://www.sparkfun.com/products/12859)- Version 1.6. Currently available. 
+* [ROB-11876](https://www.sparkfun.com/products/retired/11876)- Version 1.5. Retired. 
+* [ROB-11699](https://www.sparkfun.com/products/retired/11699)- Version 1.3. Retired. 
+* [ROB-10735](https://www.sparkfun.com/products/retired/10735)- Version 1.2. Retired.
+
+Version History
+---------------
+* [vExxFxxZxxHxxLxxSxx](URL for tag specific to this version) description 
+* [vEyyFyyZyyHyyLyySyy](URL for tag specific to this version) description
 
 License Information
 -------------------
 The hardware is released under [Creative Commons Share-alike 3.0](http://creativecommons.org/licenses/by-sa/3.0/).  
+The code is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
+
+Distributed as-is; no warranty is given.
 
 For custom licensing terms, please contact the project author - Brian Schmalz at brian@schmalzhaus.com
 
-->This is a collaboration with Brian Schmalz. <-
+->This is a collaboration with Brian Schmalz.<-
