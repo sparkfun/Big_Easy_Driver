@@ -5,7 +5,7 @@ SparkFun Big Easy Driver
 
 [*SparkFun Big Easy Driver (ROB-12859)*](https://www.sparkfun.com/products/12859)
 
-This is a stepper motor driver board capapble of driving bi-polar stepper motors at up to 2A/phase.
+This is a stepper motor driver board capable of driving bi-polar stepper motors at up to 2A/phase.
 
 Repository Contents
 -------------------
@@ -34,6 +34,10 @@ The code is beerware; if you see me (or any other SparkFun employee) at the loca
 
 Distributed as-is; no warranty is given.
 
+Getting Started Help
+--------------------
+There's a great [Big Easy Driver Hookup Guide](https://learn.sparkfun.com/tutorials/big-easy-driver-hookup-guide) by SparkFun.
 
+There are six example sketches in the **/Firmware** directory. Examples 1 through 5 have hookup diagrams and explanations on the [Easy Driver Examples](http://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html) page.
 
 _This is a collaboration with Brian Schmalz._
