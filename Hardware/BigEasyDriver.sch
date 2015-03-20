@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -117,7 +117,7 @@
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
-<schematic>
+<schematic xreflabel="%F%N/%S" xrefpart="/%S.%C%R">
 <libraries>
 <library name="supply1">
 <packages>
@@ -18994,7 +18994,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="78.74" y="144.78" size="1.4224" layer="98">MS3 = Vcc (1/16 microstep)</text>
 <text x="78.74" y="165.1" size="1.4224" layer="98">Short JP10, or JP6 pins </text>
 <text x="78.74" y="167.64" size="1.4224" layer="98">DEFAULT OPTIONS</text>
-<text x="2.54" y="177.8" size="5.08" layer="98">BigEasyDriver v1.6</text>
+<text x="2.54" y="177.8" size="5.08" layer="98">BigEasyDriver v1.6a</text>
 <text x="5.08" y="99.06" size="1.4224" layer="98">DIR is level sensitive</text>
 <text x="5.08" y="96.52" size="1.4224" layer="98">A rising edge on STEP</text>
 <text x="5.08" y="91.44" size="1.4224" layer="98">Both take 0V to Vcc</text>
@@ -19039,7 +19039,7 @@ and heat sinking/fan to reach this.</text>
 <text x="5.08" y="17.78" size="0.8128" layer="98">-updated footprint for driver IC (1:1)</text>
 <text x="5.08" y="16.51" size="0.8128" layer="98">-ran all traces directly away from IC</text>
 <text x="5.08" y="15.24" size="0.8128" layer="98">-moved vias and retraced as necessary on VCC and TOP layers</text>
-<text x="238.76" y="7.62" size="2.54" layer="94" font="vector">v16</text>
+<text x="238.76" y="7.62" size="2.54" layer="94" font="vector">v16a</text>
 <text x="148.59" y="8.89" size="1.778" layer="94">Revised by Patrick Alberts</text>
 <text x="2.54" y="13.97" size="0.8128" layer="98">v1.4 SF 4/17/2013 Fixed current adjustment pot silk so directions are correct</text>
 <text x="2.54" y="12.7" size="0.8128" layer="98">v1.5 SF 6/27/2013</text>
