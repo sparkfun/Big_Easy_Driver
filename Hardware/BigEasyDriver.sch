@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -19077,7 +19077,7 @@ and heat sinking/fan to reach this.</text>
 <text x="41.656" y="137.16" size="1.4224" layer="98">D.N.I</text>
 <text x="71.628" y="137.16" size="1.4224" layer="98">D.N.I</text>
 <text x="41.656" y="139.954" size="1.4224" layer="98">.100" Headers</text>
-<text x="71.628" y="139.7" size="1.4224" layer="98">2.5mm Screw Terminals</text>
+<text x="71.628" y="139.7" size="1.4224" layer="98">3.5mm Screw Terminals</text>
 <text x="2.54" y="22.86" size="0.8128" layer="98">v1.1 BPS Added pull-ups, re-routed</text>
 <text x="2.54" y="81.28" size="1.4224" layer="98">Bi-polar Stepper Motor Outputs</text>
 <text x="13.716" y="53.34" size="1.4224" layer="98">D.N.I</text>
