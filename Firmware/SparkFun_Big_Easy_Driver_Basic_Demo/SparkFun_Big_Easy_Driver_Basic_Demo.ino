@@ -96,7 +96,7 @@ void StepForwardDefault()
 {
   Serial.println("Moving forward at default step mode.");
   digitalWrite(dir, LOW); //Pull direction pin low to move "forward"
-  for(x= 1; x<1000; x++)  //Loop the forward stepping enough times for motion to be visible
+  for(x= 0; x<1000; x++)  //Loop the forward stepping enough times for motion to be visible
   {
     digitalWrite(stp,HIGH); //Trigger one step forward
     delay(1);
@@ -112,7 +112,7 @@ void ReverseStepDefault()
 {
   Serial.println("Moving in reverse at default step mode.");
   digitalWrite(dir, HIGH); //Pull direction pin high to move in "reverse"
-  for(x= 1; x<1000; x++)  //Loop the stepping enough times for motion to be visible
+  for(x= 0; x<1000; x++)  //Loop the stepping enough times for motion to be visible
   {
     digitalWrite(stp,HIGH); //Trigger one step
     delay(1);
@@ -131,7 +131,7 @@ void SmallStepMode()
   digitalWrite(MS1, HIGH); //Pull MS1,MS2, and MS3 high to set logic to 1/16th microstep resolution
   digitalWrite(MS2, HIGH);
   digitalWrite(MS3, HIGH);
-  for(x= 1; x<1000; x++)  //Loop the forward stepping enough times for motion to be visible
+  for(x= 0; x<1000; x++)  //Loop the forward stepping enough times for motion to be visible
   {
     digitalWrite(stp,HIGH); //Trigger one step forward
     delay(1);
@@ -159,7 +159,7 @@ void ForwardBackwardStep()
       digitalWrite(dir,HIGH);
     }
     
-    for(y=1; y<1000; y++)
+    for(y=0; y<1000; y++)
     {
       digitalWrite(stp,HIGH); //Trigger one step
       delay(1);
